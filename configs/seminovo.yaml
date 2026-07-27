@@ -1,0 +1,69 @@
+seed: 454
+
+data:
+  n_peaks: 150
+  min_mz: 50.52564895
+  max_mz: 2500.0
+  min_intensity: 0.01
+  remove_precursor_tol: 2.0
+  max_charge: 10
+
+model:
+  dim_model: 512
+  n_head: 8
+  dim_feedforward: 1024
+  n_layers: 9
+  dropout: 0.10
+  max_length: 100
+  min_peptide_len: 6
+  gated_attention: true
+  peak_embedding: multiscale
+  train_label_smoothing: 0.0
+  residues:
+    G: 57.021464
+    A: 71.037114
+    S: 87.032028
+    P: 97.052764
+    V: 99.068414
+    T: 101.047670
+    C(+57.02): 160.030649
+    L: 113.084064
+    I: 113.084064
+    N: 114.042927
+    D: 115.026943
+    Q: 128.058578
+    K: 128.094963
+    E: 129.042593
+    M: 131.040485
+    H: 137.058912
+    F: 147.068414
+    R: 156.101111
+    Y: 163.063329
+    W: 186.079313
+    M(+15.99): 147.035400
+    N(+.98): 115.026943
+    Q(+.98): 129.042594
+
+optimization:
+  learning_rate: 0.0005
+  weight_decay: 0.05
+  warmup_iters: 100000
+  max_iters: 600000
+  optimizer_name: adamw
+  ema_decay: 0.999
+
+trainer:
+  load_checkpoint: null
+  max_epochs: 30
+  train_batch_size: 32
+  eval_batch_size: 512
+  num_workers: 16
+  num_sanity_val_steps: 0
+  val_check_interval: 1000
+  check_val_every_n_epoch: 1
+
+decoding:
+  n_beams: 5
+  top_match: 1
+  precursor_mass_tol: 50.0
+  isotope_error_range: [0, 1]

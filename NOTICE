@@ -1,0 +1,16 @@
+SemiNovo includes a minimal subset of NovoBench for preprocessing, the
+Casanovo decoding contract, and evaluation metrics.
+
+NovoBench
+Copyright (c) 2024 Jingbo Zhou
+Source: https://github.com/Westlake-OmicsAI/NovoBench
+Reference commit: 5453cd024b56fb9f6c70dd2efb4754ec6dce2e7d
+License: MIT
+
+FlashAttention is used through its public Python package.
+Source: https://github.com/Dao-AILab/flash-attention
+License: BSD-3-Clause
+
+Depthcharge is used through the depthcharge-ms Python package.
+Source: https://github.com/wfondrie/depthcharge
+License: Apache-2.0
